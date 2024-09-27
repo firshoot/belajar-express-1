@@ -11,20 +11,54 @@ app.set("view engine", "ejs"); // Set view engine to EJS
 //route /home
 app.get("/", (req, res) => {
   // res.sendFile(__dirname + "/index.html");
-  res.render("index");
+  const news = [
+    {
+      title: "Berita 1",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      title: "Berita 2",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+  ];
+  res.render("index", { title: "Home Page", news: news });
 });
 
-//route /contact
-app.get("/contact", (req, res) => {
-  // res.send("Contact Page");
-  // res.sendFile(__dirname + "/contact.html");
-  res.render("contact");
-});
-
-//route /about
-app.get("/about", (req, res) => {
-  // res.sendFile(__dirname + "/about.html");
-  res.render("about");
+//route /data prodi
+app.get("/prodi", (req, res) => {
+  const prodi = [
+    {
+      prodi: "Sistem Informasi",
+      fakultas: "FIKR",
+      singkatan: "SI",
+    },
+    {
+      prodi: "Informatika",
+      fakultas: "FIKR",
+      singkatan: "IF",
+    },
+    {
+      prodi: "Teknik Elektro",
+      fakultas: "FIKR",
+      singkatan: "TE",
+    },
+    {
+      prodi: "Manajemen Informatika",
+      fakultas: "FIKR",
+      singkatan: "TI",
+    },
+    {
+      prodi: "Manajemen",
+      fakultas: "FEB",
+      singkatan: "MJ",
+    },
+    {
+      prodi: "Akuntansi",
+      fakultas: "FEB",
+      singkatan: "AK",
+    },
+  ];
+  res.render("prodi", { title: "Data Prodi", prodi: prodi });
 });
 
 //route /mahasiswa
@@ -38,6 +72,19 @@ app.get("/mahasiswa", (req, res) => {
       { npm: 2226240013, nama: "Andro" },
     ],
   });
+});
+
+//route /contact
+app.get("/contact", (req, res) => {
+  // res.send("Contact Page");
+  // res.sendFile(__dirname + "/contact.html");
+  res.render("contact");
+});
+
+//route /about
+app.get("/about", (req, res) => {
+  // res.sendFile(__dirname + "/about.html");
+  res.render("about");
 });
 
 //route /dosen
