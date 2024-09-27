@@ -2,19 +2,29 @@ const express = require("express"); // Express
 const app = express(); // Express app
 const port = 3000; // Port number
 
+app.set("view engine", "ejs"); // Set view engine to EJS
+
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
+
+//route /home
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  // res.sendFile(__dirname + "/index.html");
+  res.render("index");
 });
 
 //route /contact
 app.get("/contact", (req, res) => {
   // res.send("Contact Page");
-  res.sendFile(__dirname + "/contact.html");
+  // res.sendFile(__dirname + "/contact.html");
+  res.render("contact");
 });
 
 //route /about
 app.get("/about", (req, res) => {
-  res.sendFile(__dirname + "/about.html");
+  // res.sendFile(__dirname + "/about.html");
+  res.render("about");
 });
 
 //route /mahasiswa
