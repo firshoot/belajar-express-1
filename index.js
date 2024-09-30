@@ -104,6 +104,7 @@ app.get("*", (req, res) => {
   res.send("404 Page Not Found");
 });
 
+// Listen to port
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
