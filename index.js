@@ -7,6 +7,7 @@ app.set("views", __dirname + "/views"); // Set views directory
 app.set("view engine", "ejs"); // Set view engine to EJS
 
 app.use(expressLayouts); // Use express layouts
+app.use(express.static(__dirname + "/public")); // Set public directory
 
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
