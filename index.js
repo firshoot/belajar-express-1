@@ -6,6 +6,8 @@ const port = 3000; // Port number
 app.set("views", __dirname + "/views"); // Set views directory
 app.set("view engine", "ejs"); // Set view engine to EJS
 
+app.use(expressLayouts); // Use express layouts
+
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
 // });
