@@ -88,7 +88,7 @@ app.get("/contact", (req, res) => {
 //route /about
 app.get("/about", (req, res) => {
   // res.sendFile(__dirname + "/about.html");
-  res.render("about");
+  res.render("about", { title: "About us", layout: "main" });
 });
 
 //route /dosen
