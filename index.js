@@ -1,7 +1,9 @@
 const express = require("express"); // Express
 const app = express(); // Express app
+const expressLayouts = require("express-ejs-layouts"); // Express EJS Layouts
 const port = 3000; // Port number
 
+app.set("views", __dirname + "/views"); // Set views directory
 app.set("view engine", "ejs"); // Set view engine to EJS
 
 // app.get("/", (req, res) => {
