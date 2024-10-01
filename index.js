@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
       content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
   ];
-  res.render("index", { title: "Home Page", news: news });
+  res.render("main", { title: "Home Page", news: news });
 });
 
 //route /data prodi
