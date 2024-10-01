@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
       content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
   ];
-  res.render("main", { title: "Home Page", news: news });
+  res.render("index", { title: "Home Page", news: news, layout: "main" });
 });
 
 //route /data prodi
@@ -62,7 +62,7 @@ app.get("/prodi", (req, res) => {
       singkatan: "AK",
     },
   ];
-  res.render("prodi", { title: "Data Prodi", prodi: prodi });
+  res.render("prodi", { title: "Data Prodi", prodi: prodi, layout: "main" });
 });
 
 //route /mahasiswa
@@ -82,7 +82,7 @@ app.get("/mahasiswa", (req, res) => {
 app.get("/contact", (req, res) => {
   // res.send("Contact Page");
   // res.sendFile(__dirname + "/contact.html");
-  res.render("contact");
+  res.render("contact", { title: "Contact me", layout: "main" });
 });
 
 //route /about
